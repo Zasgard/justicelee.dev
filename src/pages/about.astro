@@ -1,0 +1,154 @@
+---
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About | Justice Lee" description="About Justice Lee — software developer and former industrial engineer based in GA, USA.">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1553"
+					height="873"
+					src="/assets/at-work.jpg"
+					alt="Justice Lee at work"
+				/>
+			</Hero>
+
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+						Hello! I'm Justice. I started my career as an industrial engineer, working in warehouse
+						automation, where I specialized in PLC programming, electrical design, network layouts,
+						and system commissioning. My year was a cycle of designing control schematics, traveling
+						on-site to install and program warehouse systems, and wrapping up with documentation and
+						support.
+					</p>
+					<p>
+						After spending long hours commissioning these systems, I realized that software was the
+						future — and I wanted to be part of it. So I made the leap, teaching myself to code and
+						transitioning into software development. Now I'm a self-taught developer with a passion
+						for continuous learning and problem-solving.
+					</p>
+					<p>
+						I bring a unique perspective to software development: the ability to understand both the
+						physical systems and the software that drives them. Excited to see where the journey
+						takes me next!
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+					<p>
+						<strong>B.S. in Electrical Engineering</strong><br />
+						The Pennsylvania State University — Graduated 2017
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p>
+						Python · JavaScript · CSS · HTML · Flask · Git · Linux · Volttron Platform ·
+						PostgreSQL · Neo4J · C# · C++ · SQL · pytest · AutoCAD · PLC Ladder Logic · VBA
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Experience</h2>
+				<div class="content">
+					<p>
+						<strong>Software Developer</strong> — Ace IOT Solutions, Chattanooga, TN (Oct 2022 – Present)<br />
+						Building the Ace Manager web application, integrating advanced data processing features,
+						configuring the Volttron Platform, and developing machine-learning agents for IoT data
+						collection.
+					</p>
+					<p>
+						<strong>Software Developer 1</strong> — Trew, Mason, OH (Apr 2021 – Sept 2022)<br />
+						Developed PLC ladder logic, modified HMI software (CHAMP) using C#/JavaScript, and
+						contributed to the SmartMoves warehouse execution system.
+					</p>
+					<p>
+						<strong>Project Engineer</strong> — Material Handling Systems, Atlanta, GA (Sept 2017 – Mar 2021)<br />
+						Designed electrical drawings for parcel distribution systems, developed AutoCAD automation
+						macros in C#, and oversaw on-site installation and testing of control systems.
+					</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content p {
+		margin-bottom: 1rem;
+	}
+
+	.content p:last-child {
+		margin-bottom: 0;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
